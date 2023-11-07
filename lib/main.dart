@@ -63,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         backgroundColor: Colors.white70,
                         minRadius: 60.0,
                         child: CircleAvatar(
-                          radius: 50.0,
+                          radius: 55.0,
                           backgroundImage:
                               AssetImage('assets/images/weldsh.jpg'),
                         ),
