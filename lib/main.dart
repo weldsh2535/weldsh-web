@@ -59,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         minRadius: 35.0,
                         child: Icon(Icons.call, size: 30.0),
                       ),
-                      CircleAvatar(
+                      const CircleAvatar(
                         backgroundColor: Colors.white70,
                         minRadius: 60.0,
                         child: CircleAvatar(
@@ -75,10 +75,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-                  Text(
+                  const Text(
                     'Weldsh Aweke',
                     style: TextStyle(
                       fontSize: 35,
@@ -86,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       color: Colors.white,
                     ),
                   ),
-                  Text(
+                  const Text(
                     'Flutter Developer',
                     style: TextStyle(
                       color: Colors.white,
@@ -96,109 +96,105 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
             ),
-            Container(
-              child: Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Container(
-                      color: Colors.deepOrange.shade300,
-                      child: ListTile(
-                        title: Text(
-                          '5000',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 30,
-                            color: Colors.white,
-                          ),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  child: Container(
+                    color: Colors.deepOrange.shade300,
+                    child: const ListTile(
+                      title: Text(
+                        '5000',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 30,
+                          color: Colors.white,
                         ),
-                        subtitle: Text(
-                          'Followers',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.white70,
-                          ),
+                      ),
+                      subtitle: Text(
+                        'Followers',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.white70,
                         ),
                       ),
                     ),
                   ),
-                  Expanded(
-                    child: Container(
-                      color: Colors.red,
-                      child: ListTile(
-                        title: Text(
-                          '5000',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 30,
-                            color: Colors.white,
-                          ),
+                ),
+                Expanded(
+                  child: Container(
+                    color: Colors.red,
+                    child: const ListTile(
+                      title: Text(
+                        '5000',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 30,
+                          color: Colors.white,
                         ),
-                        subtitle: Text(
-                          'Following',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.white70,
-                          ),
+                      ),
+                      subtitle: Text(
+                        'Following',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.white70,
                         ),
                       ),
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-            Container(
-              child: Column(
-                children: <Widget>[
-                  ListTile(
-                    title: Text(
-                      'Email',
-                      style: TextStyle(
-                        color: Colors.deepOrange,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    subtitle: Text(
-                      'weldetsadik2535@gmail.com',
-                      style: TextStyle(fontSize: 18),
+            const Column(
+              children: <Widget>[
+                ListTile(
+                  title: Text(
+                    'Email',
+                    style: TextStyle(
+                      color: Colors.deepOrange,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Divider(),
-                  ListTile(
-                    title: Text(
-                      'GitHub',
-                      style: TextStyle(
-                        color: Colors.deepOrange,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    subtitle: Text(
-                      'https://github.com/weldsh2535',
-                      style: TextStyle(fontSize: 18),
+                  subtitle: Text(
+                    'weldetsadik2535@gmail.com',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
+                Divider(),
+                ListTile(
+                  title: Text(
+                    'GitHub',
+                    style: TextStyle(
+                      color: Colors.deepOrange,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Divider(),
-                  ListTile(
-                    title: Text(
-                      'Linkedin',
-                      style: TextStyle(
-                        color: Colors.deepOrange,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    subtitle: Text(
-                      'linkedin.com/in/weldsh-aweke-232129219',
-                      style: TextStyle(fontSize: 18),
+                  subtitle: Text(
+                    'https://github.com/weldsh2535',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
+                Divider(),
+                ListTile(
+                  title: Text(
+                    'Linkedin',
+                    style: TextStyle(
+                      color: Colors.deepOrange,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                ],
-              ),
+                  subtitle: Text(
+                    'linkedin.com/in/weldsh-aweke-232129219',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
+              ],
             )
           ],
         ),
