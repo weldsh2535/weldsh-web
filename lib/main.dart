@@ -1,236 +1,208 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const MyHomePage(title: 'weldsh'),
+      home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
-
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+    return MaterialApp(
+      title: 'Profile Challenge 01',
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.red,
+          title: Text('Profile'),
+          centerTitle: true,
+        ),
+        body: ListView(
+          children: <Widget>[
+            Container(
+              height: 250,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Colors.red, Colors.deepOrange.shade300],
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                  stops: [0.5, 0.9],
+                ),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      CircleAvatar(
+                        backgroundColor: Colors.red.shade300,
+                        minRadius: 35.0,
+                        child: Icon(Icons.call, size: 30.0),
+                      ),
+                      CircleAvatar(
+                        backgroundColor: Colors.white70,
+                        minRadius: 60.0,
+                        child: CircleAvatar(
+                          radius: 50.0,
+                          backgroundImage:
+                              AssetImage('assets/images/weldsh.jpg'),
+                        ),
+                      ),
+                      CircleAvatar(
+                        backgroundColor: Colors.red.shade300,
+                        minRadius: 35.0,
+                        child: Icon(Icons.message, size: 30.0),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    'Weldsh Aweke',
+                    style: TextStyle(
+                      fontSize: 35,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  Text(
+                    'Flutter Developer',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Container(
+                      color: Colors.deepOrange.shade300,
+                      child: ListTile(
+                        title: Text(
+                          '5000',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 30,
+                            color: Colors.white,
+                          ),
+                        ),
+                        subtitle: Text(
+                          'Followers',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white70,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      color: Colors.red,
+                      child: ListTile(
+                        title: Text(
+                          '5000',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 30,
+                            color: Colors.white,
+                          ),
+                        ),
+                        subtitle: Text(
+                          'Following',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white70,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              child: Column(
+                children: <Widget>[
+                  ListTile(
+                    title: Text(
+                      'Email',
+                      style: TextStyle(
+                        color: Colors.deepOrange,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    subtitle: Text(
+                      'weldetsadik2535@gmail.com',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  ),
+                  Divider(),
+                  ListTile(
+                    title: Text(
+                      'GitHub',
+                      style: TextStyle(
+                        color: Colors.deepOrange,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    subtitle: Text(
+                      'https://github.com/weldsh2535',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  ),
+                  Divider(),
+                  ListTile(
+                    title: Text(
+                      'Linkedin',
+                      style: TextStyle(
+                        color: Colors.deepOrange,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    subtitle: Text(
+                      'linkedin.com/in/weldsh-aweke-232129219',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
-      body: Container(
-          child: Row(
-        children: [
-          Card(
-            elevation: 50,
-            shadowColor: Colors.black,
-            color: Colors.greenAccent[100],
-            child: SizedBox(
-              width: 300,
-              height: 400,
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Column(
-                  children: [
-                    CircleAvatar(
-                      backgroundColor: Colors.green[500],
-                      radius: 108,
-                      child: const CircleAvatar(
-                        backgroundImage: NetworkImage(
-                            "https://media.geeksforgeeks.org/wp-content/uploads/20210101144014/gfglogo.png"), //NetworkImage
-                        radius: 100,
-                      ), //CircleAvatar
-                    ), //CircleAvatar
-                    const SizedBox(
-                      height: 10,
-                    ), //SizedBox
-                    Text(
-                      'Design',
-                      style: TextStyle(
-                        fontSize: 30,
-                        color: Colors.green[900],
-                        fontWeight: FontWeight.w500,
-                      ), //Textstyle
-                    ), //Text
-                    const SizedBox(
-                      height: 10,
-                    ), //SizedBox
-                    const Text(
-                      'Product design, UI/UX design, Design systems',
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.green,
-                      ), //Textstyle
-                    ), //Text
-                    //SizedBox
-                  ],
-                ), //Column
-              ), //Padding
-            ), //SizedBox
-          ),
-          Card(
-            elevation: 50,
-            shadowColor: Colors.black,
-            color: Colors.greenAccent[100],
-            child: SizedBox(
-              width: 300,
-              height: 400,
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Column(
-                  children: [
-                    CircleAvatar(
-                      backgroundColor: Colors.green[500],
-                      radius: 108,
-                      child: const CircleAvatar(
-                        backgroundImage: NetworkImage(
-                            "https://media.geeksforgeeks.org/wp-content/uploads/20210101144014/gfglogo.png"), //NetworkImage
-                        radius: 100,
-                      ), //CircleAvatar
-                    ), //CircleAvatar
-                    const SizedBox(
-                      height: 10,
-                    ), //SizedBox
-                    Text(
-                      'Development',
-                      style: TextStyle(
-                        fontSize: 30,
-                        color: Colors.green[900],
-                        fontWeight: FontWeight.w500,
-                      ), //Textstyle
-                    ), //Text
-                    const SizedBox(
-                      height: 10,
-                    ), //SizedBox
-                    const Text(
-                      'Developing scalable web apps and mobile apps',
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.green,
-                      ), //Textstyle
-                    ), //Text
-                    //SizedBox
-                  ],
-                ), //Column
-              ), //Padding
-            ), //SizedBox
-          ),
-          Card(
-            elevation: 50,
-            shadowColor: Colors.black,
-            color: Colors.greenAccent[100],
-            child: SizedBox(
-              width: 300,
-              height: 400,
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Column(
-                  children: [
-                    CircleAvatar(
-                      backgroundColor: Colors.green[500],
-                      radius: 108,
-                      child: const CircleAvatar(
-                        backgroundImage: NetworkImage(
-                            "https://media.geeksforgeeks.org/wp-content/uploads/20210101144014/gfglogo.png"), //NetworkImage
-                        radius: 100,
-                      ), //CircleAvatar
-                    ), //CircleAvatar
-                    const SizedBox(
-                      height: 10,
-                    ), //SizedBox
-                    Text(
-                      'Deployment',
-                      style: TextStyle(
-                        fontSize: 30,
-                        color: Colors.green[900],
-                        fontWeight: FontWeight.w500,
-                      ), //Textstyle
-                    ), //Text
-                    const SizedBox(
-                      height: 10,
-                    ), //SizedBox
-                    const Text(
-                      'Automated deployment workflow and CI/CD pipelines',
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.green,
-                      ), //Textstyle
-                    ), //Text
-                    //SizedBox
-                  ],
-                ), //Column
-              ), //Padding
-            ), //SizedBox
-          ),
-          Card(
-            elevation: 50,
-            shadowColor: Colors.black,
-            color: Colors.greenAccent[100],
-            child: SizedBox(
-              width: 300,
-              height: 400,
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Column(
-                  children: [
-                    CircleAvatar(
-                      backgroundColor: Colors.green[500],
-                      radius: 108,
-                      child: const CircleAvatar(
-                        backgroundImage: NetworkImage(
-                            "https://media.geeksforgeeks.org/wp-content/uploads/20210101144014/gfglogo.png"), //NetworkImage
-                        radius: 100,
-                      ), //CircleAvatar
-                    ), //CircleAvatar
-                    const SizedBox(
-                      height: 10,
-                    ), //SizedBox
-                    Text(
-                      'Maintenance',
-                      style: TextStyle(
-                        fontSize: 30,
-                        color: Colors.green[900],
-                        fontWeight: FontWeight.w500,
-                      ), //Textstyle
-                    ), //Text
-                    const SizedBox(
-                      height: 10,
-                    ), //SizedBox
-                    const Text(
-                      'Continuous monitoring, maintenance and support',
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.green,
-                      ), //Textstyle
-                    ), //Text
-                    //SizedBox
-                  ],
-                ), //Column
-              ), //Padding
-            ), //SizedBox
-          )
-        ],
-      )),
-      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
